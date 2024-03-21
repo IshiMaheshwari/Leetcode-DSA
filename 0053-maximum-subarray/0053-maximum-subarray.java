@@ -1,14 +1,19 @@
 class Solution {
-public int maxSubArray(int[] nums) {
-int lmax=nums[0];
-int gmax=nums[0];
-int j;
-for(int i=1;i<nums.length;i++)
-{
-j=nums[i]+lmax;
-lmax=(nums[i]>j)?nums[i]:j;
-gmax=(gmax>lmax)?gmax:lmax;
-}
-return gmax;
-}
+    public int maxSubArray(int[] nums) {
+         int z=0;
+        int sum=nums[0];
+        int n=nums.length;
+        
+      for(int e=0;e<n;e++)
+      {
+             
+              z=z+nums[e];
+              if(z>sum) sum=z;
+              if(z<0) z=0;
+          
+      }
+        return sum;
+    }
+    
+    
 }
